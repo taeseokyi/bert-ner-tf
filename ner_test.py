@@ -321,6 +321,8 @@ def main():
             else:
               temp_1.append(label_map[label_ids[i][j].numpy()])
               temp_2.append(label_map[logits[i][j].numpy()])
+    print(y_true)
+    print(y_pred)
     report = classification_report(y_true, y_pred, digits=4)
     output_eval_file = os.path.join(args.output_dir, "eval_results.txt")
     with open(output_eval_file, "w") as writer:
