@@ -335,7 +335,7 @@ if __name__ == "__main__":
 # pylint: disable=pointless-string-statement
 '''
 
-python run_ner_hf_tag.py  \
+python ner_test.py  \
   --data_dir=data/tech_name_tag  \
   --hf_model_name=monologg/koelectra-small-v2-discriminator  \
   --output_dir=out_base_ner_hf  \
@@ -349,7 +349,7 @@ python run_ner_hf_tag.py  \
   --multi_gpu \
   --gpus=0,1
 
-python run_ner_hf_tag.py  \
+python ner_test.py  \
   --data_dir=data/tech_name_tag  \
   --hf_model_name=gogamza/kobart-base-v2  \
   --do_spm_model  \
@@ -361,4 +361,6 @@ python run_ner_hf_tag.py  \
   --eval_on=dev  \
   --train_batch_size=2
 
+  --multi_gpu \
+  --gpus=0,1
 '''
