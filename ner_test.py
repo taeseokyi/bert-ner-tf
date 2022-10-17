@@ -20,7 +20,8 @@ def main():
 
   # Required parameters
   parser.add_argument("--data_dir",
-                      default=f"{tsyi_tflib.__path__[0]}/data/tech_name_tag",
+                      #default=f"{tsyi_tflib.__path__[0]}/data/tech_name_tag",
+                      default="data",
                       type=str,
                       required=False,
                       help="The input data dir. Should contain the .tsv files (or other data files) for the task.")
@@ -32,7 +33,7 @@ def main():
   parser.add_argument("--hf_model_name", default="gogamza/kobart-base-v2", type=str, 
                       required=False,
                       help="String that represents tensorflow hugging face's model name.")
-  parser.add_argument("--do_spm_model", action='store_true',
+  parser.add_argument("--do_spm_model", default=True, action='store_true',
                       help="Tokenizer's type.")
   # Other parameters
   parser.add_argument("--max_seq_length",
@@ -55,7 +56,7 @@ def main():
                       action='store_true',
                       help="Set this flag if you are using an uncased model.")
   parser.add_argument("--train_batch_size",
-                      default=2,
+                      default=8,
                       type=int,
                       help="Total batch size for training.")
   parser.add_argument("--eval_batch_size",
@@ -67,7 +68,7 @@ def main():
                       type=float,
                       help="The initial learning rate for Adam.")
   parser.add_argument("--num_train_epochs",
-                      default=3,
+                      default=1,
                       type=int,
                       help="Total number of training epochs to perform.")
   parser.add_argument("--warmup_proportion",
